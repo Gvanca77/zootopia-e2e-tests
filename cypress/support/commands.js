@@ -1,25 +1,19 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('registerUser', (user) => {
+    cy.visit('https://testzootopia.loremipsum.ge/ka/register')
+    cy.get(':nth-child(1) > .ismile').type(user.fullname)
+    cy.get(':nth-child(2) > .imail').type(user.email)
+    cy.get('.ipir').type(user.idnumber)
+    cy.get(':nth-child(4) > .itel').type(user.phone)
+    cy.get(':nth-child(5) > .ipass').type(user.password)
+    cy.get('.reg-form-left > :nth-child(6) > .ipass').type(user.password)
+    cy.get('input[name="agree"]').check({ force: true })
+    cy.get('.regsub').click()
+  })
+  
+  Cypress.Commands.add('loginUser', (credentials) => {
+    cy.visit('https://testzootopia.loremipsum.ge/ka/register')
+    cy.get('.menu-pop > .rprof').click()
+    cy.get(':nth-child(5) > .imail').type(credentials.email)
+    cy.get('.input-shablon > :nth-child(6) > .ipass').type(credentials.password)
+    cy.get('.avtorization > .input-shablon > .form-button').click()
+  })
