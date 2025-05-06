@@ -1,0 +1,22 @@
+
+{
+    "validUser": {
+      "name": "Gvanca Abramishvili",
+      "email": "abramishvili.gvanca71@gmail.com",
+      "id": "01001098797",
+      "phone": "5514442401",
+      "password": "gvanca12345"
+    },
+     "ValidLogin": {
+    "email": "abramishvili.gvanca77@gmail.com",
+    "password": "gvanca123"
+  },
+  "invalidRegistration": {
+    "fullName": "გ",
+    "email": "abramishvili.gvanca@mail.com",
+    "idNumber": "01010101014",
+    "phone": "5514440000",
+    "password": "gvanca2"
+  }
+}
+    
